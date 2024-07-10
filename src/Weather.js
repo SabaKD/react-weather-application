@@ -14,25 +14,17 @@ export default function Weather(){
                     </div>
                 </div>
             </form>
-            <h1>City name</h1>
-            <ul>
-                <li>
-                    Date
-                </li>
-                <li>
-                    description
-                </li>
-
-            </ul>
+            
             <div className="row">
                 <div className="col-6">
+                    <div className="row">
+                        <div className="col-4">
                     <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="cloudy"/>
                     <span>23 </span> 
                     ºC | ºF
-
-                </div>
-                <div className="col-6">
-                    <ul>
+                    </div>
+                    <div className="col-8">
+                     <ul>
                 <li>
                     Precipitation: 11%
                 </li>
@@ -41,6 +33,22 @@ export default function Weather(){
                 </li>
                 <li>
                     Wind: 18 km/h
+                </li>
+
+            </ul>
+            </div>
+            </div>
+
+                </div>
+                <div className="col-6">
+                   
+            <h1>Weather of City name</h1>
+            <ul>
+                <li>
+                    Date
+                </li>
+                <li>
+                    description
                 </li>
 
             </ul>
