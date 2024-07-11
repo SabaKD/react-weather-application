@@ -9,7 +9,7 @@ export default function App() {
     <h1>
       Weather Application
     </h1>
-      <Weather/>
+      <Weather cityName={"Lisbon"}/>
       <footer>
       Coded by Saba and it is{" "}
        <a href='https://github.com/SabaKD/react-weather-application'>Open-sourced on github</a>
