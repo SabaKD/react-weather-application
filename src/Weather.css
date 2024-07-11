@@ -30,7 +30,7 @@ body {
     font-size: 12px;
     padding: 0;
 }
-.Weather .left-side .temprature {
+.Weather .left-side .temperature {
     font-size: 48px;
     color: #e8eaed;
     vertical-align: top;
@@ -45,10 +45,42 @@ body {
     padding-left: 6px;
     vertical-align: top;
 }
-.Weather .left-side .img {
-    display: inline-block;
-    height: 600px;
-   
-    vertical-align: top;
-    width: 60px;
+
+.weather-icon {
+    max-width: 70px !important;
+}
+.Weather strong{
+    color: #e8eaed;
+    font-size: 20px;
+}
+
+
+@media (max-width: 800px) {
+    
+    .Weather .left-side .temperature {
+        font-size: 28px;
+    }
+    .Weather .left-side .unit {
+        font-size: 12px;
+        margin-top: 3px;
+        padding-left: 3px
+    }
+    .weather-icon {
+        max-width: 40px;
+    }
+    .Weather .left-side ul {
+        font-size: 12px;
+        line-height: 12px;
+    }
+    .Weather h1 {
+        font-size: 16px;
+        line-height: 16px;
+        margin: 0;
+    }
+
+    .Weather .right-side ul {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    
 }
