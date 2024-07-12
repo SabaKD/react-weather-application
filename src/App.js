@@ -13,6 +13,7 @@ export default function App() {
       <footer>
       Coded by Saba and it is{" "}
        <a href='https://github.com/SabaKD/react-weather-application'>Open-sourced on github</a>
+        
        </footer>
     </div>
   </div>

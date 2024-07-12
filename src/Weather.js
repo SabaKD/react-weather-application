@@ -9,7 +9,6 @@ export default function Weather(props){
     const [forecastWeatherData, setForecastWeatherData] = useState({ready : false});
     const [city, setCity] = useState(props.cityName);   
     function handleResponse (response){
-        // console.log(response.data);
         setWeatherData({
             ready: true,
             newCity: city,
@@ -52,7 +51,6 @@ export default function Weather(props){
     }
     
     if (weatherData.ready){
-        console.log(city);
         return (
             <div className="Weather">
             <form onSubmit={handleSubmit}>
