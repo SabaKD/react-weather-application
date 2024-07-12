@@ -14,13 +14,13 @@ export default function WeatherInfo(props){
                         </div>
                         <div className="col-5">
                         <WeatherUnitConversion celsius={Math.round(props.data.temperature)}/>
-                            
-                        </div>
+                            </div>
+                        
                         
                         <div className="col-5">
                             <ul>
                                 <li>
-                                    Feels like: {Math.round(props.data.feelsLike)}
+                                    Feels Like: {Math.round(props.data.feelsLike)}ºC
                                 </li>
                                 <li>
                                     Humidity: {props.data.humidity}%
@@ -35,12 +35,12 @@ export default function WeatherInfo(props){
 
                 </div>
                 <div className="col-6 right-side">
-                   <h1>Weather of {props.data.city}</h1>
+                   <h1 className="text-capitalize">Weather of {props.data.city}</h1>
                     <ul>
                         <li>
                             <FormattedDate date={props.data.date}/>
                         </li>
-                        <li>
+                        <li className="text-capitalize">
                             {props.data.description}
                         </li>
 
