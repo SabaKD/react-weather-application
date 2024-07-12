@@ -6,12 +6,13 @@ import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props){
     const [weatherData, setWeatherData] = useState({ready : false});
-    const [city, setCity] = useState(props.cityName)
+    const [forecastWeatherData, setForecastWeatherData] = useState({ready : false});
+    const [city, setCity] = useState(props.cityName);   
     function handleResponse (response){
         // console.log(response.data);
         setWeatherData({
             ready: true,
-            city: city,
+            newCity: city,
             temperature: response.data.temperature.current,
             wind: response.data.wind.speed,
             humidity: response.data.temperature.humidity,
@@ -23,12 +24,14 @@ export default function Weather(props){
         })
         
     }
+    function handleForecast(response){
+        setForecastWeatherData({
+            ready: true,
+            forecast: response.data.daily
+        })
 
-    function search(){
-        let apiKey = "4bc76te01aac743d12o764377f46072e";
-        let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-        axios.get(apiUrl).then(handleResponse);
     }
+
     
     function handleSubmit(event){
         event.preventDefault();
@@ -38,10 +41,20 @@ export default function Weather(props){
         setCity(event.target.value);
         
     }
+    function search(){
+        let apiKey = "4bc76te01aac743d12o764377f46072e";
+        let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+        let forecastApiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
 
+        axios.get(apiUrl).then(handleResponse);
+        axios.get(forecastApiUrl).then(handleForecast);
+
+    }
+    
     if (weatherData.ready){
+        console.log(city);
         return (
-        <div className="Weather">
+            <div className="Weather">
             <form onSubmit={handleSubmit}>
                 <div className="row">
                     <div className="col-9">
@@ -53,7 +66,7 @@ export default function Weather(props){
                 </div>
             </form>
             <WeatherInfo data={weatherData}/>
-            <WeatherForecast data={weatherData}/>
+            <WeatherForecast data={forecastWeatherData.forecast }/>
             
 
         </div>
