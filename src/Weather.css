@@ -29,6 +29,7 @@ body {
 .Weather .left-side ul {
     font-size: 12px;
     padding: 0;
+    margin-top: 10px;
 }
 .Weather .left-side .temperature {
     font-size: 48px;

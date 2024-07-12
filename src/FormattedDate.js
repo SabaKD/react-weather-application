@@ -12,7 +12,7 @@ export default function FormattedDate(props){
     if (minutes < 10){
         minutes = `0 ${minutes}`;
     }
-    let weekDay = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    let weekDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     return (
         <div>
             {weekDay[day]} {hour}:{minutes}
