@@ -13,7 +13,7 @@ export default function WeatherInfo(props){
                             <img src={props.data.icon} alt={props.data.description} className=" img-fluid weather-icon"/>
                         </div>
                         <div className="col-5">
-                        <WeatherUnitConversion/>
+                        <WeatherUnitConversion celsius={Math.round(props.data.temperature)}/>
                             
                         </div>
                         
